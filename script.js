@@ -6,7 +6,7 @@ const
     EXTRA_TIME_PER_HIT = 1
 
 let 
-    sprite, sprite2, scorer, timer, start, gameOver, animation, stopper;
+    sprite, scorer, timer, start, gameOver, animation, stopper;
 
 const 
     setSize = () => {
@@ -24,7 +24,6 @@ const
         timer = new Timer(TIME_LIMIT * 1000)
         scorer = new Score()
         sprite = new Sprite(100)
-        sprite2 = new Sprite(150)
 
         animation = requestAnimationFrame(animate)
     },
@@ -36,7 +35,6 @@ const
             init()
         } else {
             sprite.click(e)
-            sprite2.click(e)
         }
     }, 
 
@@ -48,7 +46,6 @@ const
         scorer.draw()
         timer.update(delta)
         sprite.draw()
-        sprite2.draw()
 
         if(gameOver) gameOverScreen()
         else requestAnimationFrame(animate)
